@@ -9,16 +9,11 @@ import { HeroesService } from '../../services/heroes.service';
   templateUrl: './heroe.component.html',
   styles: [
     `
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
-        /* This is better for small screens, once min() is better supported */
-        /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
-        gap: 1rem;
-      }
       img {
-        width: 100%;
-        border-radius: 5px;
+        width: 50%;
+        heigth: 50%;
+        margin: auto;
+        border-radius: 10%;
       }
       .example-card {
         max-width: 400px;
