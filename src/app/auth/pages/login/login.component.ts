@@ -1,11 +1,25 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class LoginComponent {
+  constructor(private router: Router, private authService: AuthService) {}
 
+  login = () => {
+    // Ir al backend
+
+    // un usuario
+    this.authService.login().subscribe((resp) => {
+      if (resp.id) {
+        // Navegar a la ventana de heroes una vez autenticado
+        console.log(resp);
+        this.router.navigate(['./heroes']);
+      }
+    });
+  };
 }
